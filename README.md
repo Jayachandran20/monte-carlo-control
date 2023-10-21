@@ -21,12 +21,6 @@ The agent has 4 possible actions:
 * 2: Right
 * 3: Up
 
-### Transition Probabilities :
-Slippery surface with a 33.3% chance of moving as intended and a 66.6% chance of moving in orthogonal directions. For example, if the agent intends to move left, there is a 
-* 33.3% chance of moving left, a
-* 33.3% chance of moving down, and a 
-* 33.3% chance of moving up.
-
 ### Rewards :
 The agent receives a reward of 1 for reaching the goal state, and a reward of 0 otherwise.
 

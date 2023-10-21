@@ -1,12 +1,12 @@
 # <p align="center">MONTE CARLO CONTROL ALGORITHM</p>
 
-## AIM
+## AIM :
 To develop a Python program to find the optimal policy for the given RL environment using the Monte Carlo algorithm.
 
-## PROBLEM STATEMENT
+## PROBLEM STATEMENT :
 The FrozenLake environment in OpenAI Gym is a gridworld problem that challenges reinforcement learning agents to navigate a slippery terrain to reach a goal state while avoiding hazards. Note that the environment is closed with a fence, so the agent cannot leave the gridworld.
 
-### States
+### States :
 * 5 Terminal States:
    * G (Goal): The state the agent aims to reach.
    * H (Hole): A hazardous state that the agent must avoid at all costs.
@@ -14,28 +14,28 @@ The FrozenLake environment in OpenAI Gym is a gridworld problem that challenges 
    * S (Starting state): The initial position of the agent.
    * Intermediate states: Grid cells forming a layout that the agent must traverse.
 
-### Actions
+### Actions :
 The agent has 4 possible actions:
 * 0: Left
 * 1: Down
 * 2: Right
 * 3: Up
 
-### Transition Probabilities
+### Transition Probabilities :
 Slippery surface with a 33.3% chance of moving as intended and a 66.6% chance of moving in orthogonal directions. For example, if the agent intends to move left, there is a 
 * 33.3% chance of moving left, a
 * 33.3% chance of moving down, and a 
 * 33.3% chance of moving up.
 
-### Rewards
+### Rewards :
 The agent receives a reward of 1 for reaching the goal state, and a reward of 0 otherwise.
 
-### Graphical Representation
+### Graphical Representation :
 <p align='center'>
 <image src="https://github.com/ShafeeqAhamedS/monte-carlo-control/assets/93427237/7be7c0fe-f7f7-4b38-809c-405c7b463985">
 </p>
 
-## MONTE CARLO CONTROL ALGORITHM
+## MONTE CARLO CONTROL ALGORITHM :
 1. Initialize the state value function V(s) and the policy π(s) arbitrarily.
 2. Generate an episode using π(s) and store the state, action, and reward sequence.
 3. For each state s appearing in the episode:
@@ -53,7 +53,7 @@ The agent receives a reward of 1 for reaching the goal state, and a reward of 0 
     * `axis`: The axis along which to find the maximum value.
 
 
-## MONTE CARLO CONTROL FUNCTION
+## MONTE CARLO CONTROL FUNCTION :
 ```python
 import numpy as np
 from tqdm import tqdm
@@ -105,8 +105,9 @@ def mc_control(env, gamma=1.0, init_alpha=0.5, min_alpha=0.01, alpha_decay_ratio
     return Q, V, pi
 ```
 
-### PROGRAM TO EVLUATE THE POLICY
+### PROGRAM TO EVALUATE THE POLICY :
 ```python
+# number of episodes = 450000
 import random
 import numpy as np
 
@@ -154,21 +155,13 @@ def results(env, optimal_pi, goal_state, seed=123):
   			Obtains an average undiscounted return of: {avg_return:.4f}.')
 
 goal_state = 15
-results(env, optimal_pi, goal_state=goal_state)
+results(env, optimal_pi, goal_state=goal_state) 
 
 ```
-## OUTPUT:
-### State - Value Function
-![image](https://github.com/ShafeeqAhamedS/monte-carlo-control/assets/93427237/cf55e033-41c0-412f-ba29-1f7aff6ef3e7)
-
-### Action - Value Function
-![image](https://github.com/ShafeeqAhamedS/monte-carlo-control/assets/93427237/19b93272-369a-4837-a915-300c2820e4db)
-
-### Policy
-![image](https://github.com/ShafeeqAhamedS/monte-carlo-control/assets/93427237/801edbb1-4db8-4408-8289-ad0710bb6973)
-
-### Success Percentage of Policy
-![image](https://github.com/ShafeeqAhamedS/monte-carlo-control/assets/93427237/cd9e4926-6d51-4254-b342-dd390096ec51)
-
-## RESULT:
-Thus a Python program is developed to find the optimal policy for the given RL environment using the Monte Carlo algorithm.
+## OUTPUT :
+### Value Functions :
+![image](https://github.com/Jovita08/monte-carlo-control/assets/94174503/78ba9006-0aec-40d3-a713-b1f2eb4e4637)
+### Success Percentage of Policy :
+![image](https://github.com/Jovita08/monte-carlo-control/assets/94174503/ff1840ea-1795-4c1b-a2bc-23343d7547e5)
+## RESULT :
+Thus, a Python program is developed to find the optimal policy for the given RL environment using the Monte Carlo algorithm.
